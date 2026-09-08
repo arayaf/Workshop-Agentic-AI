@@ -1,5 +1,4 @@
-// Environment variable types
-export interface Env {
+export type Env = {
   APP_KV?: KVNamespace;
   ASSETS?: Fetcher;
   GEMINI_API_KEY?: string;
@@ -10,4 +9,5 @@ export interface Env {
   OPENAI_COMPAT_MODEL?: string;
   OPENAI_COMPAT_API_KEY?: string;
   DEFAULT_CHAT_PROVIDER?: string;
-}
+  [key: string]: unknown;
+};

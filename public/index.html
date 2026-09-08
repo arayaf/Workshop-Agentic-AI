@@ -1,18 +1,62 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="th">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Portal Hub</title>
+  <title>Portal Hub — AI Workshop</title>
   <style>
-    body { font-family: Arial, sans-serif; }
-    .card { border: 1px solid #ccc; padding: 16px; margin: 16px; }
-    .card a { text-decoration: none; color: #0066cc; }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background-color: #f6f8fa;
+      color: #24292e;
+      padding: 40px 20px;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    header {
+      margin-bottom: 30px;
+    }
+    h1 { font-size: 2rem; margin-bottom: 8px; }
+    p.subtitle { color: #586069; font-size: 1.05rem; }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+    }
+    .card {
+      background: #fff;
+      border: 1px solid #e1e4e8;
+      border-radius: 8px;
+      padding: 24px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+      transition: transform 0.15s ease, box-shadow 0.15s ease;
+      text-decoration: none;
+      color: inherit;
+      display: block;
+    }
+    .card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      border-color: #0366d6;
+    }
+    .card h2 { font-size: 1.25rem; margin-bottom: 8px; color: #0366d6; }
+    .card p { color: #586069; font-size: 0.95rem; line-height: 1.4; }
   </style>
 </head>
 <body>
-  <h1>Portal Test Hub</h1>
-  <div class="card">
+  <header>
+    <h1>Portal Hub</h1>
+    <p class="subtitle">ศูนย์กลางระบบ Workshop Agentic AI บน Cloudflare Workers</p>
+  </header>
+  <div class="grid">
+    <a href="/chat/" class="card">
+      <h2>💬 หน้าต่าง Chat</h2>
+      <p>คุยกับ AI แบบหลายโมเดล (Gemini, OpenAI, Custom Gateway) ผ่าน Backend Worker</p>
+    </a>
+  </div>
+</body>
+</html>
     <h2>💬 หน้าต่าง Chat</h2>
     <a href="/chat/">ลอง Chat กับ AI</a>
   </div>
