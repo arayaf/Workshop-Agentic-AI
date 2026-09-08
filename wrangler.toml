@@ -1,32 +1,13 @@
-name = "workshop-agentic-ai"
+name = "my-ai-app"
 main = "src/index.ts"
-compatibility_date = "2026-08-01"
-compatibility_flags = ["nodejs_compat"]
-
-# หน้าเว็บ static (Chat / Key settings / MCP settings) — เสิร์ฟตรงจากโฟลเดอร์นี้
-# path ที่ไม่ตรงกับไฟล์ในนี้ (เช่น /api/*, /mcp/*, /telegram/*) จะตกไปที่ src/index.ts ให้อัตโนมัติ
-[assets]
+compatibility_date = "2023-08-09"
+[vars]
+GEMINI_MODEL = "gpt-3"
+OPENAI_MODEL = "davinci"
+DEFAULT_CHAT_PROVIDER = "gemini"
+OPENAI_COMPAT_BASE_URL = "https://api.example.com"
+OPENAI_COMPAT_MODEL = "gpt-4o-mini"
+[[assets]]
 directory = "./public"
-binding = "ASSETS"
-
-# ต้องสร้างจริงก่อนใช้งาน: `npx wrangler kv namespace create APP_KV` แล้วเอา id ที่ได้มาแทนค่าด้านล่าง
-# ดูขั้นตอนเต็มใน SETUP.md
 [[kv_namespaces]]
 binding = "APP_KV"
-id = "d413e0fbe57a4a5c9db800d642660b60"
-
-# Secret จริงทั้งหมดต่อไปนี้ ห้ามใส่ในไฟล์นี้เด็ดขาด — ตั้งผ่าน `npx wrangler secret put <ชื่อ>` เท่านั้น
-# (เข้ารหัสเก็บฝั่ง Cloudflare) รายชื่อที่ต้องตั้ง ดู SETUP.md:
-#   ADMIN_TOKEN, GEMINI_API_KEY, OPENAI_API_KEY, OPENAI_COMPAT_API_KEY,
-#   GOOGLE_CLIENT_ID, GOOGLE_CLIENT_SECRET, GOOGLE_REFRESH_TOKEN,
-#   TELEGRAM_BOT_TOKEN, TELEGRAM_WEBHOOK_SECRET
-
-[vars]
-# ค่า config ทั่วไปที่ไม่ใช่ความลับ ใส่ตรงนี้ได้ แก้ default model ได้จากตรงนี้จุดเดียว
-GEMINI_MODEL = "gemini-flash-latest"
-OPENAI_MODEL = "gpt-4o-mini"
-DEFAULT_CHAT_PROVIDER = "gemini"
-# base URL ของ AI gateway แบบ OpenAI-compatible กำหนดเอง (provider "openai-compat") เช่น
-# "Replace base url" — ไม่บังคับ ใช้เฉพาะตอนเลือก provider นี้เท่านั้น
-OPENAI_COMPAT_BASE_URL = "Replace base url"
-OPENAI_COMPAT_MODEL = "gpt-4o-mini"
